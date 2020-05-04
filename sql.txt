@@ -1,0 +1,64 @@
+
+create table departments(
+id number(6) primary key,
+name varchar2(200)
+)
+
+create table users(
+id number(6) primary key,
+dept_id number(6) REFERENCES departments (id) on delete cascade,
+name varchar2(20),
+email varchar2(100),
+password varchar2(100),
+user_type number(2))
+
+
+create table categories(
+id number(6) primary key,
+dept_id number(6) REFERENCES departments (id) on delete cascade,
+name varchar2(200),
+priority number(2)
+)
+
+create table complaints(
+id number(6) primary key,
+title varchar2(200),
+description varchar2(4000),
+dept_id number(6) REFERENCES departments (id) on delete cascade,
+category_id number(6) REFERENCES categories (id) on delete cascade,
+user_id number(6) REFERENCES users (id) on delete cascade,
+open date,
+close date,
+technician_id REFERENCES users (id) on delete cascade,
+priority number(2),
+resolution varchar2(4000),
+status number(2)
+)
+
+create table articles(
+id number(6) primary key,
+title varchar2(255),
+content VARCHAR2(4000),
+user_id number(6) REFERENCES users (id) on delete cascade,
+created date
+)
+
+create table Faq(
+id number(6) primary key,
+question varchar2(255),
+answer VARCHAR2(4000),
+user_id number(6) REFERENCES users (id) on delete cascade,
+created date
+)
+
+create table ratings(
+user_id number(6) references users (id) on delete cascade,
+article_id number(6) references articles (id) on delete cascade,
+star number(5)
+)
+
+insert into departments values(1, 'Admin');
+commit;
+
+insert into users values(1, 1 , 'Admin Mantech', 'admin@mantech.com', 'admin', 2);
+commit;
