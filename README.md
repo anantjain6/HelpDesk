@@ -1,7 +1,7 @@
 # Hwelp Desk
 
 This is the project allows users to register complaint and admin gives priority to each complaint then assign it complaint to a technician. The technician resolves the assigned complaint.
-Also this project has a FAQ for site related quary and Knowledge Base for common complaint.
+Also this project has a FAQ for site related quarry and Knowledge Base for common complaint.
 
 ## Server Requirements
 -   Java
