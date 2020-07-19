@@ -1,4 +1,4 @@
-# Hwlp Desk
+# Help Desk
 
 This project is developed using JSP and Oracle DB. 
 Users can register a complaint and admin gives priority to each complaint then assign it to a technician. The technician resolves the assigned complaint.
